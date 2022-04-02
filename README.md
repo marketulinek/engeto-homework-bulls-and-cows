@@ -6,17 +6,18 @@ Homework 2a for Python Academy - Bulls & Cows
 
 # Task Assignment
 
-Tvým úkolem bude vytvořit program, který by simuloval hru Bulls and Cows. Po vypsání úvodního textu uživateli, může hádání tajného čtyřciferného čísla začít.
-Program bude obsahovat:
+The goal is to create game Bulls and Cows.
 
-1. Program pozdraví užitele a vypíše úvodní text
-2. Program dále vytvoří tajné 4místné číslo (číslice musí být unikátní a nesmí začínat 0)
-3. Hráč hádá číslo. Program jej upozorní, pokud zadá číslo kratší nebo delší než 4 čísla, pokud bude obsahovat duplicity, začínat nulou, příp. obsahovat nečíselné znaky
-4. Program vyhodnotí tip uživatele
-5. Program dále vypíše počet bull/ bulls (pokud uživatel uhodne jak číslo, tak jeho umístění), příp. cows/ cows (pokud uživatel uhodne pouze číslo, ale ne jeho umístění). Vrácené ohodnocení musí brát ohled na jednotné a množné číslo ve výstupu. Tedy 1 bull a 2 bulls (stejně pro cow/cows).
+The program has to contain:
+
+1. Greeting the user and write the introductory text
+2. Generate 4 digit secret number (digits has to be unique and no leading zero)
+3. The player is guessing the number. The program alerts player if entered value is not numeric or does not contain 4 digits or starts with zero.
+4. Evaluating the guessed number.
+5. Write number of bulls (correctly guessed number and its position) and cows (correctly guessed number but not its position). Singular and plural form must be considered.
 
 
-Příklad hry s číslem 2017:
+Example with number 2017:
 
     Hi there!
     -----------------------------------------------
@@ -41,7 +42,8 @@ Příklad hry s číslem 2017:
     That's {amazing, average, not so good, ...}
 
 
-Program toho může umět víc. Můžeš přidat například:
 
-- počítání času, za jak dlouho uživatel uhádne tajné číslo
-- uchovávat statistiky počtu odhadů jednotlivých her
+The program can contain more features. For example:
+
+- counting how long it takes the user to guess the secret number
+- keep statistics on the number of guesses for each game
