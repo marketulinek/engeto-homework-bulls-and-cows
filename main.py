@@ -20,13 +20,12 @@ while len(generated_number) < 4:
     if list(generated_number).count(generated_digit) < 1:
         generated_number += generated_digit
 
-print(generated_number) # debugging porpose
-
 
 # -------------------------------
 #           LET'S PLAY
 # -------------------------------
 player_choice = ''
+number_of_guesses = 0
 
 while player_choice != generated_number:
 
@@ -60,6 +59,7 @@ while player_choice != generated_number:
             # -------------------------------
             #   Evaluating player's choice
             # -------------------------------
+            number_of_guesses += 1
             bulls = 0
             cows = 0
 
@@ -75,5 +75,13 @@ while player_choice != generated_number:
             print(f'{bulls} bulls, {cows} cows')
 
 else:
-    print("Correct, you've guessed the right number in X guesses!")
+    if number_of_guesses < 6:
+        verbal_rating = 'amazing'
+    elif number_of_guesses < 11:
+        verbal_rating = 'average'
+    else:
+        verbal_rating = 'not so good'
 
+    print(f"Correct, you've guessed the right number in {number_of_guesses} guesses!")
+    print(separator)
+    print(f"That's {verbal_rating}")
