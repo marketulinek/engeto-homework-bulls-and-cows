@@ -13,8 +13,12 @@ print(separator)
 # -------------------------------
 generated_number = str(randrange(1, 10))
 
-for i in range(1, 4):
-    generated_number += str(randrange(10))
+while len(generated_number) < 4:
+
+    generated_digit = str(randrange(10))
+
+    if list(generated_number).count(generated_digit) < 1:
+        generated_number += generated_digit
 
 print(generated_number) # debugging porpose
 
@@ -27,6 +31,7 @@ player_choice = ''
 while player_choice != generated_number:
 
     player_choice = input('Enter a number: ')
+    print(separator)
 
     if not player_choice.isnumeric():
 
@@ -49,12 +54,25 @@ while player_choice != generated_number:
             if list(player_choice).count(number) > 1:
 
                 print('Entered number contains duplicates, try again ...')
-                continue
+                break
+        else:
         
-        # -------------------------------
-        #   Evaluating player's choice
-        # -------------------------------
+            # -------------------------------
+            #   Evaluating player's choice
+            # -------------------------------
+            bulls = 0
+            cows = 0
 
+            print('>>>', player_choice)
+
+            for i in range(0, 4):
+
+                if player_choice[i] == generated_number[i]:
+                    bulls += 1
+                elif list(generated_number).count(player_choice[i]):
+                    cows += 1
+            
+            print(f'{bulls} bulls, {cows} cows')
 
 else:
     print("Correct, you've guessed the right number in X guesses!")
