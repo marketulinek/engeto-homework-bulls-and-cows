@@ -27,10 +27,13 @@ while len(generated_number) < 4:
 player_choice = ''
 number_of_guesses = 0
 
+player_choice = input('Enter a number: ')
+print(separator)
+
 while player_choice != generated_number:
 
-    player_choice = input('Enter a number: ')
-    print(separator)
+    if number_of_guesses > 0:
+        player_choice = input('>>> ')
 
     if not player_choice.isnumeric():
 
@@ -60,12 +63,13 @@ while player_choice != generated_number:
             #   Evaluating player's choice
             # -------------------------------
             number_of_guesses += 1
-            bulls = 0
-            cows = 0
             word_bull = 'bull'
             word_cow = 'cow'
+            bulls = 0
+            cows = 0
 
-            print('>>>', player_choice)
+            if number_of_guesses == 0:
+                print('>>>', player_choice)
 
             for i in range(0, 4):
 
@@ -78,7 +82,9 @@ while player_choice != generated_number:
                 word_bull += 's'
             if cows != 1:
                 word_cow += 's'
+            
             print(f'{bulls} {word_bull}, {cows} {word_cow}')
+            print(separator)
 
 else:
     if number_of_guesses < 6:
