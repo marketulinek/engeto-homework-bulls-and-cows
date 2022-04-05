@@ -1,4 +1,5 @@
 from random import randrange
+from helpful_functions import *
 import time
 import datetime
 
@@ -91,17 +92,13 @@ while player_choice != generated_number:
             print(separator)
 
 else:
+    # -------------------------------
+    #            Victory
+    # -------------------------------
     time_end = time.time()
     time_duration = time_end - time_start
-
-    if number_of_guesses < 6:
-        verbal_rating = 'amazing'
-    elif number_of_guesses < 11:
-        verbal_rating = 'average'
-    else:
-        verbal_rating = 'not so good'
 
     print(f"Correct, you've guessed the right number in {number_of_guesses} guesses!")
     print('Game duration:', datetime.timedelta(seconds=time_duration))
     print(separator)
-    print(f"That's {verbal_rating}")
+    print("That's %s" % verbal_rating(number_of_guesses))
