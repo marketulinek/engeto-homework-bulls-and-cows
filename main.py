@@ -1,5 +1,6 @@
 from random import randrange
 import time
+import datetime
 
 separator = '-' * 47
 
@@ -101,6 +102,6 @@ else:
         verbal_rating = 'not so good'
 
     print(f"Correct, you've guessed the right number in {number_of_guesses} guesses!")
-    print('Game duration in seconds:', time_duration)
+    print('Game duration:', datetime.timedelta(seconds=time_duration))
     print(separator)
     print(f"That's {verbal_rating}")
