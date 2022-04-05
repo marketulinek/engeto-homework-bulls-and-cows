@@ -62,6 +62,8 @@ while player_choice != generated_number:
             number_of_guesses += 1
             bulls = 0
             cows = 0
+            word_bull = 'bull'
+            word_cow = 'cow'
 
             print('>>>', player_choice)
 
@@ -72,7 +74,11 @@ while player_choice != generated_number:
                 elif list(generated_number).count(player_choice[i]):
                     cows += 1
             
-            print(f'{bulls} bulls, {cows} cows')
+            if bulls != 1:
+                word_bull += 's'
+            if cows != 1:
+                word_cow += 's'
+            print(f'{bulls} {word_bull}, {cows} {word_cow}')
 
 else:
     if number_of_guesses < 6:
