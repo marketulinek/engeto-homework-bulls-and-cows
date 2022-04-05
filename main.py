@@ -1,4 +1,5 @@
 from random import randrange
+import time
 
 separator = '-' * 47
 
@@ -29,6 +30,8 @@ number_of_guesses = 0
 
 player_choice = input('Enter a number: ')
 print(separator)
+
+time_start = time.time()
 
 while player_choice != generated_number:
 
@@ -87,6 +90,9 @@ while player_choice != generated_number:
             print(separator)
 
 else:
+    time_end = time.time()
+    time_duration = time_end - time_start
+
     if number_of_guesses < 6:
         verbal_rating = 'amazing'
     elif number_of_guesses < 11:
@@ -95,5 +101,6 @@ else:
         verbal_rating = 'not so good'
 
     print(f"Correct, you've guessed the right number in {number_of_guesses} guesses!")
+    print('Game duration in seconds:', time_duration)
     print(separator)
     print(f"That's {verbal_rating}")
