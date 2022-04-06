@@ -1,4 +1,3 @@
-from random import randrange
 from helpful_functions import *
 import time
 import datetime
@@ -12,21 +11,9 @@ print("Let's play a bulls and cows game.")
 print(separator)
 
 # -------------------------------
-#       GENERATING NUMBER
+#            G A M E
 # -------------------------------
-generated_number = str(randrange(1, 10))
-
-while len(generated_number) < 4:
-
-    generated_digit = str(randrange(10))
-
-    if list(generated_number).count(generated_digit) < 1:
-        generated_number += generated_digit
-
-
-# -------------------------------
-#           LET'S PLAY
-# -------------------------------
+generated_number = generate_number(4)
 player_choice = ''
 number_of_guesses = 0
 
