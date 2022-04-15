@@ -1,10 +1,10 @@
 # :bison: BULLS & COWS :cow2:
 
-CURRENTLY WORK IN PROGRESS :hammer:
+:hammer: CURRENTLY WORK IN PROGRESS :hammer:
 
-:mortar_board: Homework 2a for Python Academy - Bulls & Cows
+Homework 2a for Engeto Python Academy :mortar_board:
 
-# Task Assignment :clipboard:
+# :clipboard: Task Assignment
 
 The goal is to create game Bulls and Cows.
 
