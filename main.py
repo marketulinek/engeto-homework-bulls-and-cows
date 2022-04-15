@@ -24,8 +24,14 @@ time_start = time.time()
 
 while player_choice != generated_number:
 
-    if number_of_guesses > 0:
+    # Counting guesses
+    number_of_guesses += 1
+
+    if number_of_guesses == 1:
+        print('>>>', player_choice)
+    else:
         player_choice = input('>>> ')
+
 
     if not player_choice.isnumeric():
 
@@ -42,6 +48,11 @@ while player_choice != generated_number:
         print('Entered number contains more than 4 digits, try again ...')
         continue
 
+    elif player_choice[0] == '0':
+
+        print('Entered number starts with zero, try again ...')
+        continue
+
     else:
 
         for number in player_choice:
@@ -54,12 +65,8 @@ while player_choice != generated_number:
             # -------------------------------
             #   Evaluating player's choice
             # -------------------------------
-            number_of_guesses += 1
             bulls = 0
             cows = 0
-
-            if number_of_guesses == 0:
-                print('>>>', player_choice)
 
             for i in range(0, 4):
 
