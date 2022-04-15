@@ -16,7 +16,7 @@ def generate_number(number_of_digits):
 
     return generated_number
 
-def correct_word_according_frequency(word, number_of_frequency):
+def correct_word_by_frequency(word, number_of_frequency):
     """Checking if the entered word needs to be pluralize.
     
     Entered word must be in singular form.

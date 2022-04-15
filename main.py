@@ -68,8 +68,8 @@ while player_choice != generated_number:
                 elif list(generated_number).count(player_choice[i]):
                     cows += 1
             
-            word_bull = correct_word_according_frequency('bull', bulls)
-            word_cow = correct_word_according_frequency('cow', cows)
+            word_bull = correct_word_by_frequency('bull', bulls)
+            word_cow = correct_word_by_frequency('cow', cows)
 
             print(f'{bulls} {word_bull}, {cows} {word_cow}')
             print(separator)
