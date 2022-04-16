@@ -32,54 +32,33 @@ while player_choice != generated_number:
     else:
         player_choice = input('>>> ')
 
+    # Validating player's choice
+    validator_answer = validate_player_choice(player_choice)
 
-    if not player_choice.isnumeric():
+    if not validator_answer['answer']:
 
-        print('Entered value is not numeric, try again ...')
-        continue
-
-    elif len(player_choice) < 4:
-
-        print('Entered number contains less than 4 digits, try again ...')
-        continue
-
-    elif len(player_choice) > 4:
-
-        print('Entered number contains more than 4 digits, try again ...')
-        continue
-
-    elif player_choice[0] == '0':
-
-        print('Entered number starts with zero, try again ...')
+        print(validator_answer['message'])
         continue
 
     else:
+        # -------------------------------
+        #   Evaluating player's choice
+        # -------------------------------
+        bulls = 0
+        cows = 0
 
-        for number in player_choice:
-            if list(player_choice).count(number) > 1:
+        for i in range(0, 4):
 
-                print('Entered number contains duplicates, try again ...')
-                break
-        else:
+            if player_choice[i] == generated_number[i]:
+                bulls += 1
+            elif list(generated_number).count(player_choice[i]):
+                cows += 1
         
-            # -------------------------------
-            #   Evaluating player's choice
-            # -------------------------------
-            bulls = 0
-            cows = 0
+        word_bull = correct_word_by_frequency('bull', bulls)
+        word_cow = correct_word_by_frequency('cow', cows)
 
-            for i in range(0, 4):
-
-                if player_choice[i] == generated_number[i]:
-                    bulls += 1
-                elif list(generated_number).count(player_choice[i]):
-                    cows += 1
-            
-            word_bull = correct_word_by_frequency('bull', bulls)
-            word_cow = correct_word_by_frequency('cow', cows)
-
-            print(f'{bulls} {word_bull}, {cows} {word_cow}')
-            print(separator)
+        print(f'{bulls} {word_bull}, {cows} {word_cow}')
+        print(separator)
 
 else:
     # -------------------------------

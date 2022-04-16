@@ -16,6 +16,43 @@ def generate_number(number_of_digits):
 
     return generated_number
 
+def check_duplicate_digits(number):
+    """Check if number contains duplicate digits and return True/False."""
+    for digit in number:
+
+        if list(number).count(digit) > 1:
+            return True
+
+    return False
+
+def validate_player_choice(player_choice):
+    """Validate that player's input meets these criteria:
+    
+    - 4 digit number
+    - unique digits
+    - no leading zero
+
+    Return dict with {'answer': True/False, 'message': Alert message}
+
+    """
+    criteria_met = False
+    message = None
+
+    if not player_choice.isnumeric():
+        message = 'Entered value is not numeric, try again ...'
+    elif len(player_choice) < 4:
+        message = 'Entered number contains less than 4 digits, try again ...'
+    elif len(player_choice) > 4:
+        message = 'Entered number contains more than 4 digits, try again ...'
+    elif player_choice[0] == '0':
+        message = 'Entered number starts with zero, try again ...'
+    elif check_duplicate_digits(player_choice):
+        message = 'Entered number contains duplicates, try again ...'
+    else:
+        criteria_met = True
+
+    return {'answer': criteria_met, 'message': message}
+
 def correct_word_by_frequency(word, number_of_frequency):
     """Checking if the entered word needs to be pluralize.
     
