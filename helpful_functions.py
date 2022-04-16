@@ -27,31 +27,26 @@ def check_duplicate_digits(number):
 
 def validate_player_choice(player_choice):
     """Validate that player's input meets these criteria:
-    
+
     - 4 digit number
     - unique digits
     - no leading zero
 
-    Return dict with {'answer': True/False, 'message': Alert message}
+    Return alert message. If None is returned, player's input meets criteria.
 
     """
-    criteria_met = False
-    message = None
-
     if not player_choice.isnumeric():
-        message = 'Entered value is not numeric, try again ...'
-    elif len(player_choice) < 4:
-        message = 'Entered number contains less than 4 digits, try again ...'
-    elif len(player_choice) > 4:
-        message = 'Entered number contains more than 4 digits, try again ...'
-    elif player_choice[0] == '0':
-        message = 'Entered number starts with zero, try again ...'
-    elif check_duplicate_digits(player_choice):
-        message = 'Entered number contains duplicates, try again ...'
-    else:
-        criteria_met = True
+        return 'Entered value is not numeric, try again ...'
+    if len(player_choice) < 4:
+        return 'Entered number contains less than 4 digits, try again ...'
+    if len(player_choice) > 4:
+        return 'Entered number contains more than 4 digits, try again ...'
+    if player_choice[0] == '0':
+        return 'Entered number starts with zero, try again ...'
+    if check_duplicate_digits(player_choice):
+        return 'Entered number contains duplicates, try again ...'
 
-    return {'answer': criteria_met, 'message': message}
+    return None
 
 def correct_word_by_frequency(word, number_of_frequency):
     """Checking if the entered word needs to be pluralize.

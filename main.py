@@ -35,9 +35,9 @@ while player_choice != generated_number:
     # Validating player's choice
     validator_answer = validate_player_choice(player_choice)
 
-    if not validator_answer['answer']:
+    if validator_answer:
 
-        print(validator_answer['message'])
+        print(validator_answer)
         continue
 
     else:
