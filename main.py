@@ -14,7 +14,6 @@ print(separator)
 #            G A M E
 # -------------------------------
 generated_number = generate_number(4)
-player_choice = ''
 number_of_guesses = 0
 
 player_choice = input('Enter a number: ')

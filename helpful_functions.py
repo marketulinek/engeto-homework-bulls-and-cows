@@ -17,22 +17,22 @@ def generate_number(number_of_digits):
     return generated_number
 
 def check_duplicate_digits(number):
-    """Check if number contains duplicate digits and return True/False."""
-    for digit in number:
+    """Check if number contains duplicated digits and return True/False."""
 
+    for digit in number:
         if list(number).count(digit) > 1:
             return True
 
     return False
 
 def validate_player_choice(player_choice):
-    """Validate that player's input meets these criteria:
+    """Validate that player's input meets these conditions:
 
-    - 4 digit number
+    - 4-digit number
     - unique digits
     - no leading zero
 
-    Return alert message. If None is returned, player's input meets criteria.
+    Return alert message. If None is returned, player's input meets conditions.
 
     """
     if not player_choice.isnumeric():
