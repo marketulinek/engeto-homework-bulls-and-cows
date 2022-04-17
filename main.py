@@ -24,7 +24,6 @@ time_start = time.time()
 
 while player_choice != generated_number:
 
-    # Counting guesses
     number_of_guesses += 1
 
     if number_of_guesses == 1:
@@ -32,12 +31,11 @@ while player_choice != generated_number:
     else:
         player_choice = input('>>> ')
 
-    # Validating player's choice
-    validator_answer = validate_player_choice(player_choice)
+    alert_message = validate_player_choice(player_choice)
 
-    if validator_answer:
-
-        print(validator_answer)
+    if alert_message:
+        # When the validator has something to say
+        print(alert_message)
         continue
 
     else:
