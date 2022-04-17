@@ -1,7 +1,7 @@
 from random import randrange
 
 def generate_number(number_of_digits):
-    """Generating the number with unique digits and no leading zero."""
+    """Generate and return number with unique digits and no leading zero."""
 
     # To avoid leading zero
     generated_number = str(randrange(1, 10))
@@ -49,7 +49,7 @@ def validate_player_choice(player_choice):
     return None
 
 def correct_word_by_frequency(word, number_of_frequency):
-    """Checking if the entered word needs to be pluralize.
+    """Check if the entered word needs to be pluralize.
     
     Entered word must be in singular form.
     Return the correct form.
