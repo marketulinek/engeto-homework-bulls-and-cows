@@ -73,8 +73,8 @@ def evaluate_player_choice(player_choice, generated_number):
     """Write number of bulls (correctly guessed number and its position)
     and cows (correctly guessed number but not its position).
 
-    Singular and plural form must be considered.
-    Return message with appropriate results.
+    Singular and plural form is considered.
+    Return message with results.
 
     """
     bulls = 0
@@ -93,7 +93,7 @@ def evaluate_player_choice(player_choice, generated_number):
     return f'{bulls} {word_bull}, {cows} {word_cow}'
 
 def rate_results(number_of_guesses):
-    """Rate results according the number of guesses it takes."""
+    """Rate results according to the number of guesses it takes."""
 
     if number_of_guesses < 6:
         return 'amazing'
