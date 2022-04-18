@@ -1,8 +1,8 @@
 # :bison: BULLS & COWS :cow2:
 
-:hammer: CURRENTLY WORK IN PROGRESS :hammer:
+:hammer: UNDER DEVELOPMENT :hammer:
 
-Homework 2a for Engeto Python Academy :mortar_board:
+Homework 2a for Engeto Python Academy
 
 # :clipboard: Task Assignment
 
@@ -46,4 +46,3 @@ Example with number 2017:
 The program can contain more features. For example:
 
 - counting how long it takes the user to guess the secret number
-- keep statistics on the number of guesses for each game

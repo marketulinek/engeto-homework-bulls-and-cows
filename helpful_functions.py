@@ -1,5 +1,14 @@
 from random import randrange
 
+def create_separator(char='-', number_of_char=47):
+    """Create a separator from a certain number of chosen characters.
+
+    Default character is hyphen.
+    Default number of characters is 47.
+    
+    """
+    return char * number_of_char
+
 def generate_number(number_of_digits):
     """Generate and return number with unique digits and no leading zero."""
 
@@ -60,7 +69,31 @@ def correct_word_by_frequency(word, number_of_frequency):
 
     return word
 
-def verbal_rating(number_of_guesses):
+def evaluate_player_choice(player_choice, generated_number):
+    """Write number of bulls (correctly guessed number and its position)
+    and cows (correctly guessed number but not its position).
+
+    Singular and plural form must be considered.
+    Return message with appropriate results.
+
+    """
+    bulls = 0
+    cows = 0
+
+    for i in range(0, 4):
+
+        if player_choice[i] == generated_number[i]:
+            bulls += 1
+        elif list(generated_number).count(player_choice[i]):
+            cows += 1
+    
+    word_bull = correct_word_by_frequency('bull', bulls)
+    word_cow = correct_word_by_frequency('cow', cows)
+
+    return f'{bulls} {word_bull}, {cows} {word_cow}'
+
+def rate_results(number_of_guesses):
+    """Rate results according the number of guesses it takes."""
 
     if number_of_guesses < 6:
         return 'amazing'
