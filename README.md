@@ -1,8 +1,6 @@
 # :bison: BULLS & COWS :cow2:
 
-:hammer: UNDER DEVELOPMENT :hammer:
-
-Homework 2a for Engeto Python Academy
+Homework 2 for Engeto Python Academy
 
 # :clipboard: Task Assignment
 
