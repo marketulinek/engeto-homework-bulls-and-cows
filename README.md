@@ -1,8 +1,6 @@
 # :bison: BULLS & COWS :cow2:
 
-:hammer: UNDER DEVELOPMENT - old version :hammer:
-
-Homework 2a for Engeto Python Academy :mortar_board:
+Homework 2 for Engeto Python Academy - **OLD VERSION**
 
 # :clipboard: Task Assignment
 
